@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+	db:
+		image:mysql:5.7.23
+		restart:always
+		environment:
+			MYSQL_DATABASE: 'test_database'
+			MYSQL_USER: 'root'
+			MYSQL_PASSWORD: 'test'
+			MYSQL_ROOT_PASSWORD: 'test'
+		ports:
+			- '3306:3306'
+		expose:
+			- '3306'
+		
