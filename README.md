@@ -11,6 +11,11 @@ The any account should be created firstly,
 `curl -X POST "http://localhost:8080/api/orders" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"bookIds\": [ { \"amount\": 1, \"bookId\": 2 } ], \"customerId\": 1, \"id\": 0, \"isValid\": true}"`
 `curl -X GET "http://localhost:8080/api/statistics/all" -H "accept: */*"`
 
+Firstly the database and table desing was configured and completed;
+Second basic test endpoint was coded;
+After then relationship between entities were completed;
+Some test classes were developed;
+all endpoints was completed;
 
 The tests can be run anytime.
 
