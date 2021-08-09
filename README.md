@@ -7,8 +7,11 @@ http://localhost:8080/swagger-ui.html#/`
 The any account should be created firstly,
 
 `curl -X POST "http://localhost:8080/api/books" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"bookName\": \"string\", \"category\": \"string\", \"quantityInStock\": 10, \"unitPrice\": 10, \"writer\": \"string\"}"`
+
 `curl -X POST "http://localhost:8080/api/customers" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"age\": 10, \"email\": \"bk2@gmail.com\", \"name\": \"burak\", \"surname\": \"kilinc\"}"`
+
 `curl -X POST "http://localhost:8080/api/orders" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"bookIds\": [ { \"amount\": 1, \"bookId\": 2 } ], \"customerId\": 1, \"id\": 0, \"isValid\": true}"`
+
 `curl -X GET "http://localhost:8080/api/statistics/all" -H "accept: */*"`
 
 Firstly the database and table desing was configured and completed;
