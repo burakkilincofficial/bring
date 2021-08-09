@@ -1,7 +1,9 @@
 package com.bring.project.bring.common.model.mapper;
 
 import com.bring.project.bring.common.model.response.BasePostResponse;
-import com.bring.project.bring.model.entity.*;
+import com.bring.project.bring.model.entity.Book;
+import com.bring.project.bring.model.entity.Customer;
+import com.bring.project.bring.model.entity.Order;
 import org.springframework.stereotype.Component;
 
 @Component

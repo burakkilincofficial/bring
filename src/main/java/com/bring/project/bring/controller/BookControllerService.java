@@ -4,7 +4,8 @@ import com.bring.project.bring.common.model.dto.AppPage;
 import com.bring.project.bring.common.model.mapper.BasePostResponseMapper;
 import com.bring.project.bring.common.model.response.BasePostResponse;
 import com.bring.project.bring.common.model.response.PaginatedApiResponse;
-import com.bring.project.bring.error.exception.*;
+import com.bring.project.bring.error.exception.BookDBException;
+import com.bring.project.bring.error.exception.BookEntityNotFoundException;
 import com.bring.project.bring.mapper.BookMapper;
 import com.bring.project.bring.model.dto.BookSaveDTO;
 import com.bring.project.bring.model.dto.BookUpdateDTO;
@@ -76,13 +77,13 @@ public class BookControllerService {
 
 
     @ExceptionHandler({BookEntityNotFoundException.class})
-    public ResponseEntity<Object> handleBookEntityNotFoundException(BookEntityNotFoundException exception){
+    public ResponseEntity<Object> handleBookEntityNotFoundException(BookEntityNotFoundException exception) {
         log.error("BookControllerService-handleBookEntityNotFoundException: ", exception);
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler({BookDBException.class})
-    public ResponseEntity<Object> handleBookDBException(BookDBException exception){
+    public ResponseEntity<Object> handleBookDBException(BookDBException exception) {
         log.error("BookControllerService-handleBookDBException: ", exception);
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }

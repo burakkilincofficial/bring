@@ -4,7 +4,9 @@ import com.bring.project.bring.common.model.dto.AppPage;
 import com.bring.project.bring.common.model.mapper.BasePostResponseMapper;
 import com.bring.project.bring.common.model.response.BasePostResponse;
 import com.bring.project.bring.common.model.response.PaginatedApiResponse;
-import com.bring.project.bring.error.exception.*;
+import com.bring.project.bring.error.exception.CustomerAlreadyExistException;
+import com.bring.project.bring.error.exception.CustomerDBException;
+import com.bring.project.bring.error.exception.CustomerEntityNotFoundException;
 import com.bring.project.bring.mapper.CustomerMapper;
 import com.bring.project.bring.model.dto.CustomerSaveDTO;
 import com.bring.project.bring.model.dto.CustomerUpdateDTO;
@@ -66,19 +68,21 @@ public class CustomerControllerService {
         customerService.update(customerUpdateDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
     @ExceptionHandler({CustomerEntityNotFoundException.class})
-    public ResponseEntity<Object> handleCustomerEntityNotFoundException(CustomerEntityNotFoundException exception){
+    public ResponseEntity<Object> handleCustomerEntityNotFoundException(CustomerEntityNotFoundException exception) {
         log.error("CustomerControllerService-handleCustomerEntityNotFoundException: ", exception);
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler({CustomerDBException.class})
-    public ResponseEntity<Object> handleCustomerDBException(CustomerDBException exception){
+    public ResponseEntity<Object> handleCustomerDBException(CustomerDBException exception) {
         log.error("CustomerControllerService-handleCustomerDBException: ", exception);
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
+
     @ExceptionHandler({CustomerAlreadyExistException.class})
-    public ResponseEntity<Object> handleAlreadyExistException(CustomerAlreadyExistException exception){
+    public ResponseEntity<Object> handleAlreadyExistException(CustomerAlreadyExistException exception) {
         log.error("CustomerControllerService-handleAlreadyExistException: ", exception);
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.CONFLICT);
     }

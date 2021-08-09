@@ -1,9 +1,7 @@
 package com.bring.project.bring.service;
 
 import com.bring.project.bring.model.entity.Book;
-import com.bring.project.bring.model.entity.Customer;
 import com.bring.project.bring.model.entity.Order;
-import com.bring.project.bring.model.response.BookResponse;
 import com.bring.project.bring.model.response.StatisticsResponse;
 import com.bring.project.bring.repository.BookRepository;
 import com.bring.project.bring.repository.CustomerRepository;

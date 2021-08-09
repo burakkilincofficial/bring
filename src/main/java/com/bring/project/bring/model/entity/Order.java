@@ -21,7 +21,7 @@ public class Order extends BaseEntity implements Serializable {
     @Column(name = "is_valid", columnDefinition = "boolean default true")
     private Boolean isValid = true;
 
-    @Column(name ="total_amount_all_purchased")
+    @Column(name = "total_amount_all_purchased")
     private Double totalAmountAllPurchased;
 
     @JsonIgnore

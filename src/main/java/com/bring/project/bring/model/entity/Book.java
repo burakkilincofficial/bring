@@ -10,7 +10,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.DoubleBinaryOperator;
 
 @Entity
 @AllArgsConstructor
@@ -31,10 +30,10 @@ public class Book extends BaseEntity implements Serializable {
     @Column(name = "category")
     private String category;
 
-    @Column(name = "quantity_stock")
+    @Column(name = "quantity_stock", nullable = false)
     private Integer quantityStock;
 
-    @Column(name = "unit_price")
+    @Column(name = "unit_price", nullable = false)
     private Double unitPrice;
 
     @JsonIgnore

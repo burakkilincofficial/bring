@@ -1,11 +1,13 @@
 package com.bring.project.bring.service.impl;
 
 import com.bring.project.bring.common.error.ErrorCode;
-import com.bring.project.bring.common.error.exception.ValidationException;
 import com.bring.project.bring.common.model.dto.AppPage;
 import com.bring.project.bring.common.model.dto.Paginator;
 import com.bring.project.bring.common.model.response.PaginatedApiResponse;
-import com.bring.project.bring.error.exception.*;
+import com.bring.project.bring.error.exception.BookException;
+import com.bring.project.bring.error.exception.NotEnoughAmountBookInEntityException;
+import com.bring.project.bring.error.exception.OrderEntityNotFoundException;
+import com.bring.project.bring.error.exception.WrongAmountException;
 import com.bring.project.bring.mapper.OrderMapper;
 import com.bring.project.bring.model.dto.BuyBookDTO;
 import com.bring.project.bring.model.dto.OrderDTO;
@@ -23,7 +25,6 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManagerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -95,12 +96,12 @@ public class OrderServiceImpl implements OrderService {
         Order order = orderMapper.saveDtoToEntity(orderDTO);
         validateBooksOfOrder(order, orderDTO);
         List<Book> bookList = new ArrayList<>();
-        double totalAmountPrice=0;
+        double totalAmountPrice = 0;
 
         for (BuyBookDTO buyBookDTO : orderDTO.getBookIds()) {
             Book book = bookService.findById(buyBookDTO.getBookId());
-            book.setQuantityStock(getNewQuantityStock(buyBookDTO,book));
-            totalAmountPrice+=book.getUnitPrice()*buyBookDTO.getAmount();
+            book.setQuantityStock(getNewQuantityStock(buyBookDTO, book));
+            totalAmountPrice += book.getUnitPrice() * buyBookDTO.getAmount();
             bookList.add(book);
         }
 
@@ -127,8 +128,8 @@ public class OrderServiceImpl implements OrderService {
 
     private void checkOrderAmount(OrderDTO orderDTO) throws WrongAmountException {
         List<Integer> collectAmounts = orderDTO.getBookIds().stream().map(BuyBookDTO::getAmount).collect(Collectors.toList());
-        for(Integer amount: collectAmounts){
-            if(amount<=0){
+        for (Integer amount : collectAmounts) {
+            if (amount <= 0) {
                 throw new WrongAmountException(ErrorCode.WRONG_AMOUNT_EXCEPTION.getMessage());
             }
         }
@@ -176,7 +177,7 @@ public class OrderServiceImpl implements OrderService {
         if (optionalOrder.isPresent()) {
             return optionalOrder.get();
         } else {
-            throw new BookException(ErrorCode.ORDER_ENTITY_NOT_FOUND.name(),id);
+            throw new BookException(ErrorCode.ORDER_ENTITY_NOT_FOUND.name(), id);
         }
     }
 }
