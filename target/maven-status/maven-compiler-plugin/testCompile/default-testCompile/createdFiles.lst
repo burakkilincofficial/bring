@@ -1,1 +1,4 @@
+com\bring\project\bring\controller\CustomerControllerServiceTest.class
+com\bring\project\bring\model\entity\BookTest.class
 com\bring\project\bring\BringApplicationTests.class
+com\bring\project\bring\model\entity\BaseEntityTest.class

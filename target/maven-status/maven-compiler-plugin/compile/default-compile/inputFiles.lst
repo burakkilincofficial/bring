@@ -1,5 +1,6 @@
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\common\model\response\BasePostResponse.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\common\swagger\MvcConfig.java
+D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\model\response\StatisticsResponse.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\error\exception\CustomerException.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\model\entity\Order.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\error\exception\WrongAmountException.java
@@ -48,6 +49,7 @@ D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\model
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\common\swagger\SwaggerConfig.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\controller\OrderControllerService.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\mapper\BookMapper.java
+D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\service\StatisticsServiceImpl.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\error\exception\CustomerDBException.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\error\exception\OrderException.java
 D:\Work\Development\Java\Exams\bring\src\main\java\com\bring\project\bring\controller\StatisticsControllerService.java

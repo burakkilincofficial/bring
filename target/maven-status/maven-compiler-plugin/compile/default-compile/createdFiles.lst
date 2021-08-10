@@ -5,6 +5,7 @@ com\bring\project\bring\common\model\dto\PageVO$PageVOBuilder.class
 com\bring\project\bring\service\CustomerService.class
 com\bring\project\bring\common\model\dto\PageVO.class
 com\bring\project\bring\model\response\AllOrderResponse.class
+com\bring\project\bring\model\entity\BaseEntity$BaseEntityBuilder.class
 com\bring\project\bring\model\response\OrderResponse.class
 com\bring\project\bring\BringApplication.class
 com\bring\project\bring\mapper\CustomerMapper.class
@@ -12,6 +13,7 @@ com\bring\project\bring\model\dto\BuyBookDTO$BuyBookDTOBuilder.class
 com\bring\project\bring\util\PageUtil.class
 com\bring\project\bring\common\model\mapper\BasePostResponseMapper.class
 com\bring\project\bring\common\model\response\BasePostResponse.class
+com\bring\project\bring\controller\StatisticsControllerService.class
 com\bring\project\bring\model\entity\Order.class
 com\bring\project\bring\service\BookService.class
 com\bring\project\bring\model\response\BookResponse.class
@@ -36,6 +38,7 @@ com\bring\project\bring\model\dto\BuyBookDTO.class
 com\bring\project\bring\model\dto\UpdateOrderQuantityInStock.class
 com\bring\project\bring\service\OrderService.class
 com\bring\project\bring\controller\BookControllerService.class
+com\bring\project\bring\model\response\StatisticsResponse$StatisticsResponseBuilder.class
 com\bring\project\bring\controller\CustomerControllerService.class
 com\bring\project\bring\service\impl\CustomerServiceImpl.class
 com\bring\project\bring\error\exception\CustomerException.class
@@ -53,12 +56,14 @@ com\bring\project\bring\model\response\AllOrderResponse$AllOrderResponseBuilder.
 com\bring\project\bring\controller\OrderControllerService.class
 com\bring\project\bring\model\entity\BaseEntity.class
 com\bring\project\bring\repository\BookRepository.class
+com\bring\project\bring\service\StatisticsServiceImpl.class
 com\bring\project\bring\common\error\exception\ValidationException.class
 com\bring\project\bring\common\model\dto\Paginator.class
 com\bring\project\bring\model\response\CustomerResponse$CustomerResponseBuilder.class
 com\bring\project\bring\model\response\OrderResponse$OrderResponseBuilder.class
 com\bring\project\bring\common\swagger\MvcConfig.class
 com\bring\project\bring\model\dto\BookUpdateDTO.class
+com\bring\project\bring\model\response\StatisticsResponse.class
 com\bring\project\bring\common\model\response\ApiResponse.class
 com\bring\project\bring\error\exception\CustomerEntityNotFoundException.class
 com\bring\project\bring\error\exception\WrongAmountException.class
